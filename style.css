@@ -1065,3 +1065,239 @@ nav a:hover {
   font-size: 1rem;
   padding: 14px 32px;
 }
+
+/* =========================
+   ハンバーガーメニュー基本
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* クリックした時の変化 */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   スマホ用ナビ表示制御
+========================= */
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .services {
+        padding: 30px 0;
+    }
+
+    .solutions {
+        padding: 30px 0;
+    }
+
+    .case-section.slider {
+        padding: 30px 0;
+    }
+
+    .case-card {
+        margin: 0 50px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .hero-inner {
+        margin-top: 150px;
+    }
+
+    .hero-text .sub {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .speech-bubble ul {
+        font-size: 0.75rem;
+    }
+
+    .cta-box p {
+        font-size: 1.3rem;
+    }
+
+    .services {
+        padding: 10px 0;
+    }
+
+    .service-card {
+        margin: 0 20px;
+    }
+
+    .service-card h3 {
+        min-height: 20px;
+    }
+
+    .service-card p {
+        font-size: 0.8rem;
+    }
+
+    .solutions {
+        padding: 10px 0;
+    }
+
+    .solution-card {
+        margin: 0 20px;
+        padding: 12px 12px;
+    }
+
+    .solutions-grid {
+        gap: 16px;
+    }
+
+    .feature-section {
+        padding: 10px 0;
+    }
+
+    .section-header {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-block-start: 0.5rem;
+        margin-block-end: 0.5rem;
+    }
+
+    h3 {
+        margin-block-start: 0.5rem;
+    }
+
+    .feature-text h3{   
+        font-size: 1.2rem;
+
+    }
+
+    .feature-text p {
+        font-size: 0.8rem;
+    }
+
+    .feature-container {
+            margin: 0 auto 10px auto;
+    }
+
+    .case-section.slider {
+        padding: 10px 0;
+    }
+
+    .case-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-sub {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .about-section {
+        padding: 50px 0;
+    }
+
+    .about-text {
+        padding: 0 10px;
+    }
+
+    .footer-left {
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
+
+    .case-detail {
+        margin-top: 100px;
+        padding: 0 10px;
+    }
+
+    .case-detail h1 {
+        font-size: 1.5rem;
+    }
+
+    .back-btn {
+        margin-bottom: 60px;
+    }
+}
+
+/* スマホ（900px以下）のときだけハンバーガーを右に出す */
+@media (max-width: 900px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        gap: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 30px;
+        /* ← 右端に固定 */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        z-index: 999;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 901px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        gap: 30px;
+    }
+}
