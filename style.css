@@ -1,0 +1,1298 @@
+/* ===============================
+   Google Fonts
+=============================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* ===============================
+   Base Style
+=============================== */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+    color: #1f2937;
+    background: #fff;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===============================
+   Header
+=============================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    backdrop-filter: blur(6px);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #00A8A8;
+}
+
+/* ===============================
+   Header Contact Button
+=============================== */
+.contact-btn {
+    background: #00A8A8;
+    color: #fff !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 168, 168, 0.2);
+}
+
+.contact-btn:hover {
+    background: #009191;
+    box-shadow: 0 6px 14px rgba(0, 145, 145, 0.25);
+    transform: translateY(-1px);
+}
+
+
+/* ===============================
+   Hero Section（流動グラデーション背景）
+=============================== */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 75vh;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* 背景アニメーション層 */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, #ffb347, #ffcc33, #00A8A8, #ffb347);
+    background-size: 300% 300%;
+    animation: gradientFlow 18s ease infinite;
+    opacity: 0.3;
+    z-index: -1;
+    filter: blur(80px);
+}
+
+/* グラデーションの動き */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* コンテンツ本体 */
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    color: #0f172a;
+    max-width: 800px;
+    margin-top: 100px;
+}
+
+/* タイトル */
+.hero-text h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.25;
+    background: linear-gradient(90deg, #0f172a, #0e7490);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+/* サブテキスト */
+.hero-text .sub {
+    font-size: 1.1rem;
+    color: #334155;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1.2s 0.3s ease forwards;
+}
+
+/* ボタン */
+.buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1.2s 0.6s ease forwards;
+}
+
+.btn-primary,
+.btn-outline {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: #00A8A8;
+    color: #fff;
+    box-shadow: 0 4px 14px rgba(0, 168, 168, 0.25);
+}
+
+.btn-primary:hover {
+    background: #009191;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid #00A8A8;
+    color: #00A8A8;
+}
+
+.btn-outline:hover {
+    background: #00A8A8;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   アニメーション（フェードアップ）
+=============================== */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 900px) {
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text .sub {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ===============================
+   Services Section
+=============================== */
+.services {
+    background: #f9fafb;
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header .en-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #0f172a, #0e7490);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.section-header .jp-title {
+    font-size: 1rem;
+    color: #64748b;
+    letter-spacing: 0.05em;
+}
+
+/* 4カラムグリッド */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 2px 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 12px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 60px;
+}
+
+.service-card p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services {
+        padding: 70px 0;
+    }
+
+    .section-header .en-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* ===============================
+   Solutions Section
+=============================== */
+.solutions {
+    background: #f9fafb;
+    padding: 50px 0;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.solution-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 28px 24px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.solution-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.solution-card p {
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .solution-card {
+        padding: 24px 18px;
+    }
+}
+
+/* ===============================
+   Feature Section（テキスト＋画像レイアウト）
+=============================== */
+.feature-section {
+    background: #f8fafc;
+    padding: 50px 0;
+}
+
+.feature-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+    padding: 0 24px;
+}
+
+.feature-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+    max-width: 550px;
+}
+
+.feature-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    color: #334155;
+    line-height: 1.8;
+}
+
+.feature-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.feature-img img {
+    height: 184px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.codes img {
+    height: 214px;
+}
+
+.naritiez_logo img {
+    max-width: 400px;
+}
+
+.feature-img img:hover {
+    transform: scale(1.08);
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 900px) {
+    .feature-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature-container.reverse {
+        flex-direction: column;
+    }
+
+    .feature-img img {
+        height: 52px;
+    }
+}
+
+/* ===============================
+   こんな人におすすめ（吹き出し重なりver）
+=============================== */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+.recommend-section.alt {
+    background: #fff;
+    padding: 50px 0;
+    position: relative;
+}
+
+.recommend-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* イラスト */
+.illustration {
+    position: relative;
+    z-index: 2;
+    margin-right: -100px;
+    /* ← 吹き出しと重ねる距離を調整 */
+}
+
+.illustration img {
+    width: 280px;
+    max-width: 100%;
+    position: relative;
+    top: 40px;
+    /* ← 少し下にずらして自然な重なりに */
+}
+
+/* 吹き出し */
+.speech-bubble {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 32px 40px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    max-width: 540px;
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    left: 60px;
+    bottom: -20px;
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #f8fafc transparent transparent transparent;
+}
+
+/* 吹き出し内 */
+.speech-bubble ul {
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+    color: #0f172a;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+.cta-box {
+    text-align: center;
+    margin-top: 28px;
+    position: relative;
+}
+
+.cta-box::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 20px;
+    background: linear-gradient(to right, #fbbf24, #f97316);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.cta-box p {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 800px) {
+    .recommend-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .illustration {
+        margin-right: 0;
+        margin-bottom: -40px;
+    }
+
+    .illustration img {
+        top: 0;
+    }
+
+    .speech-bubble {
+        padding: 24px;
+    }
+
+    .speech-bubble::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ===============================
+   対応可能なニーズ（ミニマルレイアウト）
+=============================== */
+.needs-section.minimal {
+    background: #ffffff;
+    padding: 40px 0;
+}
+
+.needs-section.minimal .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.needs-section.minimal .section-sub {
+    text-align: center;
+    color: #475569;
+    font-size: 1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.needs-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 20px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.need-item {
+    border-left: 3px solid #00A8A8;
+    padding-left: 20px;
+}
+
+.need-item h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.need-item p {
+    font-size: 0.98rem;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* ===============================
+   Responsive
+=============================== */
+@media (max-width: 800px) {
+    .needs-list {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .needs-section.minimal {
+        padding: 80px 0;
+    }
+
+    .need-item {
+        border-left-width: 2px;
+    }
+}
+
+/* ===============================
+   開発事例スライド
+=============================== */
+.case-section.slider {
+    background: #f8fafc;
+    padding: 120px 0;
+}
+
+.case-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.case-section .section-sub {
+    text-align: center;
+    color: #475569;
+    font-size: 1rem;
+    margin-bottom: 60px;
+    line-height: 1.8;
+}
+
+.case-swiper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.case-card {
+    display: block;
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    padding: 60px;
+    height: 100%;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.case-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.case-content p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.price {
+    font-weight: 700;
+    color: #00A8A8;
+    font-size: 1.1rem;
+}
+
+/* Swiperナビゲーション */
+.swiper-button-prev,
+.swiper-button-next {
+    color: #00A8A8;
+}
+
+.swiper-pagination-bullet-active {
+    background: #00A8A8;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .case-card {
+        padding: 36px;
+    }
+
+    .case-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ===============================
+   About Section
+=============================== */
+.about-section {
+    padding: 30px 0;
+    background: #f9fafb;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h4 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.about-text h5 {
+    margin: 0;
+}
+
+.about-text p {
+    color: #374151;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+/* ===============================
+   Contact Section
+=============================== */
+.contact-section {
+    padding: 140px 0;
+    background: linear-gradient(120deg, #f9fafb 0%, #eef6f6 100%);
+    text-align: center;
+}
+
+.contact-text {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-text h3.jp-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 20px;
+}
+
+.contact-text p {
+    color: #374151;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.contact-info {
+    margin-bottom: 32px;
+}
+
+.contact-info p {
+    margin: 6px 0;
+    color: #334155;
+    font-size: 1.05rem;
+}
+
+.contact-info a {
+    color: #00A8A8;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.btn-contact {
+    display: inline-block;
+    background: #00A8A8;
+    color: #fff;
+    font-weight: 600;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 16px rgba(0, 168, 168, 0.3);
+}
+
+.btn-contact:hover {
+    background: #009191;
+    box-shadow: 0 8px 20px rgba(0, 145, 145, 0.4);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .contact-text h3.jp-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-text p {
+        font-size: 1rem;
+    }
+
+    .btn-contact {
+        padding: 14px 32px;
+        font-size: 1rem;
+    }
+}
+
+/* ===============================
+   Footer
+=============================== */
+.footer {
+    background: #0f172a;
+    color: #f1f5f9;
+    padding: 60px 0 30px;
+    font-size: 0.95rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 240px;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #00A8A8;
+    margin-bottom: 10px;
+}
+
+.footer-desc {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 240px;
+    text-align: right;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+}
+
+.footer-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.footer-links a {
+    color: #e2e8f0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00A8A8;
+}
+
+.footer-contact {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+.footer-contact a {
+    color: #00A8A8;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+
+    .footer-links li {
+        margin: 0 10px;
+    }
+}
+
+/* ===============================
+   Cases
+=============================== */
+
+.case-detail {
+    padding: 140px 0 80px;
+}
+
+.case-detail h1 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    color: #0f172a;
+}
+
+.case-detail .lead {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 40px;
+    line-height: 1.8;
+}
+
+.case-body h2 {
+    font-size: 1.4rem;
+    margin-top: 40px;
+    color: #1e293b;
+}
+
+.case-body ul {
+    margin: 12px 0 24px 20px;
+    color: #334155;
+}
+
+.price {
+    font-weight: 700;
+    color: #00A8A8;
+    margin-top: 32px;
+    font-size: 1.1rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.back-btn {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.back-btn .btn-primary {
+    font-size: 1rem;
+    padding: 14px 32px;
+}
+
+/* =========================
+   ハンバーガーメニュー基本
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+}
+
+/* クリックした時の変化 */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   スマホ用ナビ表示制御
+========================= */
+
+.nav-menu {
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .services {
+        padding: 30px 0;
+    }
+
+    .solutions {
+        padding: 30px 0;
+    }
+
+    .case-section.slider {
+        padding: 30px 0;
+    }
+
+    .case-card {
+        margin: 0 50px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .hero-inner {
+        margin-top: 150px;
+    }
+
+    .hero-text .sub {
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .speech-bubble ul {
+        font-size: 0.75rem;
+    }
+
+    .cta-box p {
+        font-size: 1.3rem;
+    }
+
+    .services {
+        padding: 10px 0;
+    }
+
+    .service-card {
+        margin: 0 20px;
+    }
+
+    .service-card h3 {
+        min-height: 20px;
+    }
+
+    .service-card p {
+        font-size: 0.8rem;
+    }
+
+    .solutions {
+        padding: 10px 0;
+    }
+
+    .solution-card {
+        margin: 0 20px;
+        padding: 12px 12px;
+    }
+
+    .solutions-grid {
+        gap: 16px;
+    }
+
+    .feature-section {
+        padding: 10px 0;
+    }
+
+    .section-header {
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-block-start: 0.5rem;
+        margin-block-end: 0.5rem;
+    }
+
+    h3 {
+        margin-block-start: 0.5rem;
+    }
+
+    .feature-text h3{   
+        font-size: 1.2rem;
+
+    }
+
+    .feature-text p {
+        font-size: 0.8rem;
+    }
+
+    .feature-container {
+            margin: 0 auto 10px auto;
+    }
+
+    .case-section.slider {
+        padding: 10px 0;
+    }
+
+    .case-section .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-sub {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .about-section {
+        padding: 50px 0;
+    }
+
+    .about-text {
+        padding: 0 10px;
+    }
+
+    .footer-left {
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 10px 0;
+    }
+
+    .case-detail {
+        margin-top: 100px;
+        padding: 0 10px;
+    }
+
+    .case-detail h1 {
+        font-size: 1.5rem;
+    }
+
+    .back-btn {
+        margin-bottom: 60px;
+    }
+}
+
+/* スマホ（900px以下）のときだけハンバーガーを右に出す */
+@media (max-width: 900px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 20px;
+        top: 70px;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        gap: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 30px;
+        /* ← 右端に固定 */
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        z-index: 999;
+    }
+
+    .contact-section {
+        padding: 20px;
+    }
+}
+
+@media (min-width: 901px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav ul {
+        display: flex !important;
+        gap: 30px;
+    }
+}
