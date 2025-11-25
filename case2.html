@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>開発事例｜英語スクールのオペレーション管理 | Team Immanence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <img src="スクリーンショット 2025-11-16 23.43.48.png" alt="Team Immanence ロゴ" class="logo">
+    </div>
+  </header>
+
+  <section class="case-detail container">
+    <h1>英語スクールのオペレーション管理</h1>
+    <p class="lead">
+      講師の稼働・入金・生徒対応を一元管理。<br>
+      現場の手作業を徹底的に減らし、講師・事務両方の業務負担を軽減しました。
+    </p>
+
+    <div class="case-body">
+      <h2>開発の背景</h2>
+      <p>
+        講師の勤怠・入金確認・生徒の問い合わせ対応など、管理業務が分散しており非効率でした。
+        これらを一元化することで、少人数でも円滑に運営できる仕組みを目指しました。
+      </p>
+
+      <h2>主な機能</h2>
+      <ul>
+        <li>
+          <strong>講師の勤怠・稼働管理の自動化</strong>
+          <ul>
+            <li>レッスン開始・終了に連動した自動勤怠記録（打刻不要）</li>
+            <li>講師ごとの稼働時間・コマ数・休講数を自動集計</li>
+            <li>月次レポートを自動生成し、給与・報酬計算に活用可能</li>
+            <li>代講依頼・承認フローも管理画面から完結</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>生徒の入金管理（売上管理）</strong>
+          <ul>
+            <li>Stripe／銀行入金のステータスと生徒台帳を自動照合</li>
+            <li>入金遅延者の自動検出と、メール／LINEでのリマインド通知</li>
+            <li>過去入金履歴の一覧表示（担当講師も確認可能）</li>
+            <li>決済エラー・未入金の自動フラグ付け</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>問い合わせ・対応チケット管理</strong>
+          <ul>
+            <li>生徒の問い合わせをチケット化し、未対応を自動検知</li>
+            <li>指定時間以上返信がないチケットを担当講師へ自動通知</li>
+            <li>シフト終了前に「未対応一覧」を自動送信</li>
+            <li>問い合わせ内容をカテゴリ別に集計し、改善ポイントを可視化</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>レッスン進捗・学習ログ管理</strong>
+          <ul>
+            <li>担当講師用の進捗ダッシュボードで学習状況を一元確認</li>
+            <li>課題提出・レッスン参加履歴を自動ログ化</li>
+            <li>生徒・講師間で進捗ステータスをリアルタイム共有</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>SlackとのAPI連携によるリアルタイム運営</strong>
+          <ul>
+            <li>講師の勤怠開始／終了をSlackに自動投稿</li>
+            <li>生徒からの問い合わせ到着をリアルタイム通知</li>
+            <li>入金確認の完了／未確認をチーム内で共有</li>
+            <li>「今日のタスク一覧」「未対応チケット」を朝礼時間に自動配信</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>事務・運営業務の自動化</strong>
+          <ul>
+            <li>週次・月次レポートを自動生成し、管理者へ送信</li>
+            <li>契約更新タイミングを検出し、生徒へ自動案内</li>
+            <li>新規入会者情報をSlackやスプレッドシートへ自動同期</li>
+            <li>退会処理（残コマ精算・担当講師通知）を半自動化</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>三方連携ダッシュボード（講師 × 生徒 × 管理）</strong>
+          <ul>
+            <li>レッスン枠・稼働状況・担当生徒を一画面で管理</li>
+            <li>生徒の入金状況・学習進捗・問い合わせ状況を統合管理</li>
+            <li>管理者が全講師の稼働をリアルタイム把握可能</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>低コスト運用のインフラ設計</strong>
+          <ul>
+            <li>GAS × Slack API × 外部決済APIでサーバーコストを最小化</li>
+            <li>管理業務の自動化により、事務工数を30〜50%削減</li>
+            <li>属人性を排除し、仕組みによる運営体制を実現</li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <h2>使用技術</h2>
+      <ul>
+        <li>Google Apps Script（GAS）</li>
+        <li>Slack Webhook API</li>
+        <li>Google Spreadsheet + Drive Integration</li>
+      </ul>
+
+      <h2>導入効果</h2>
+      <p>
+        勤怠・請求・問い合わせ対応が自動化され、事務工数を60%以上削減。
+        また、Slack通知により講師の対応漏れがゼロになりました。
+      </p>
+
+      <div class="price">開発費：20〜40万円</div>
+    </div>
+    <div class="back-btn">
+      <a href="immanence_hp.html#case-section" class="btn-primary">メインページに戻る</a>
+    </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Team Immanence</p>
+  </footer>
+</body>
+
+</html>

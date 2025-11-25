@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>開発事例｜会員制eラーニングシステム | Team Immanence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <img src="スクリーンショット 2025-11-16 23.43.48.png" alt="Team Immanence ロゴ" class="logo">
+    </div>
+  </header>
+
+  <section class="case-detail container">
+    <h1>会員制eラーニングシステム</h1>
+    <p class="lead">
+      会員管理・動画配信・通知機能をすべて一体化した、教育機関向けのeラーニングプラットフォーム。
+      教育ビジネスにおけるオンライン学習の仕組みを、コストを抑えながら自社で運用できるよう設計しました。
+    </p>
+
+    <div class="case-body">
+      <h2>開発の背景</h2>
+      <p>
+        既存のeラーニングサービスは月額コストが高い一方、自由なカスタマイズが難しく、また事業規模と比較するとサーバー容量が大きすぎてコスパが悪いという課題がありました。
+        そこで、自社内で動画配信・資料共有・進捗管理・リマインド通知などを統合したシステムを構築しました。
+      </p>
+
+      <h2>主な機能</h2>
+      <ul>
+        <li>
+          <strong>会員登録・ログイン（認証）機能</strong>
+          <ul>
+            <li>メールアドレス／パスワードによる安全な認証（Firebase Auth）</li>
+            <li>パスワードリセット・認証メール送信の自動化</li>
+            <li>受講コースに応じたアクセス権限の自動付与</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>動画・教材コンテンツ管理</strong>
+          <ul>
+            <li>YouTube API による限定公開動画の安全な配信</li>
+            <li>PDF・スライドなどの教材アップロードとダウンロード制御</li>
+            <li>コース／レッスン単位での教材整理と公開設定</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>受講進捗の自動記録・可視化</strong>
+          <ul>
+            <li>動画視聴完了率の自動計測（再生時間から判定）</li>
+            <li>レッスンごとの「未着手／学習中／完了」ステータス管理</li>
+            <li>weeklyレポートの自動生成・メール送信（GAS）</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>リマインド・通知システム（メール／LINE）</strong>
+          <ul>
+            <li>一定期間学習が進んでいない受講者の自動検出</li>
+            <li>個別状況に応じたパーソナライズ通知（未完了レッスンなど）</li>
+            <li>LINE Messaging API による開封率の高いプッシュ通知</li>
+            <li>講師からの重要アナウンスの一斉配信</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>管理者向けダッシュボード</strong>
+          <ul>
+            <li>コース別・会員別の学習進捗を一覧で可視化</li>
+            <li>教材アップロード／公開設定のブラウザ操作</li>
+            <li>レポート送信の曜日・時間・テンプレート設定</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>運用コスト最適化のための設計</strong>
+          <ul>
+            <li>Firebase Hosting による高速・低コスト運用</li>
+            <li>サーバー負荷に応じた自動スケール対応</li>
+            <li>学習データの自社一元管理により改善PDCAが高速化</li>
+          </ul>
+        </li>
+
+        <li>
+          <strong>拡張性の高いアーキテクチャ</strong>
+          <ul>
+            <li>コース追加・価格変更など運営側で柔軟に更新可能</li>
+            <li>クイズ／テスト／アンケートなどの追加機能に対応しやすい構造</li>
+            <li>Zoomや決済サービスなど外部APIとの連携にも対応可能</li>
+          </ul>
+        </li>
+      </ul>
+
+
+      <h2>使用技術</h2>
+      <ul>
+        <li>Google Apps Script（GAS）</li>
+        <li>Firebase（Auth / Firestore / Hosting）</li>
+        <li>JavaScript</li>
+        <li>YouTube API・LINE Messaging API</li>
+      </ul>
+
+      <h2>導入効果</h2>
+      <p>
+        外部SaaSを使わずに会員制サービスを構築したことで、月額コストを大幅削減。
+        また、学習データを自社で一元管理できるため、改善PDCAのスピードが大幅に向上しました。
+      </p>
+
+      <div class="price">開発費：150万円〜</div>
+    </div>
+    <div class="back-btn">
+      <a href="immanence_hp.html#case-section" class="btn-primary">メインページに戻る</a>
+    </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Team Immanence</p>
+  </footer>
+</body>
+
+</html>

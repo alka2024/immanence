@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>請求計算および請求書一括発行システム | Team Immanence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <img src="スクリーンショット 2025-11-16 23.43.48.png" alt="Team Immanence ロゴ" class="logo">
+    </div>
+  </header>
+
+  <section class="case-detail container">
+  <h1>請求計算および請求書一括発行システム</h1>
+  <p class="lead">
+    出席データをもとに、月次の請求額を自動計算。既存フォーマットの請求書を自動生成し、受講者全員へ一括メール送信できるシステムです。
+  </p>
+
+  <div class="case-body">
+    <h2>開発の背景</h2>
+    <p>
+      出席管理はGoogleスプレッドシートで行っていたものの、毎月の請求計算は手作業で行っており、
+      「金額の計算ミス」「発行漏れ」「送信作業の負担」が大きな問題となっていました。<br>
+      今後、受講者の増加や料金体系の変更も見込まれるため、
+      既存の運用フローをできるだけ崩さずに、自動化できる仕組みが求められていました。
+    </p>
+
+    <h2>主な機能</h2>
+    <ul>
+      <li>
+        <strong>出席データの自動集計</strong>
+        <ul>
+          <li>Google Spread Sheetの出席情報を自動で読み込み</li>
+          <li>回数制・月額制など複数の料金体系に対応</li>
+          <li>講師ごとの出席記録・クラス別集計も可能</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>請求額の自動計算</strong>
+        <ul>
+          <li>回数×単価の自動計算、月額固定料金の自動判定</li>
+          <li>割引・特別料金（兄弟割・紹介割など）にも柔軟に対応</li>
+          <li>スプレッドシートで管理している設定値をそのままシステムに反映</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>請求書の自動生成</strong>
+        <ul>
+          <li>既存の請求書フォーマットをGAS側で読み込み、最小変更で運用可能</li>
+          <li>PDF形式で請求書を自動生成（1クリックで全件作成）</li>
+          <li>受講者名・金額・対象月などの項目をテンプレートへ自動差し込み</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>メール一括送信</strong>
+        <ul>
+          <li>生成した請求書PDFを受講者のメールアドレスへ一斉送信</li>
+          <li>送信結果（成功／エラー）を自動ログ化し、管理者に通知</li>
+          <li>未送信者・エラー発生者を自動で抽出し、再送信が簡単</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>将来の拡張を考慮した柔軟な設計</strong>
+        <ul>
+          <li>料金体系やクラス数の追加にスプレッドシート側の変更だけで対応</li>
+          <li>請求書フォーマットを変更しても自動差し込みが崩れにくい構成</li>
+          <li>受講者数増加に対応できる負荷の少ないGAS構成</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>使用技術</h2>
+    <ul>
+      <li>Google Apps Script（GAS）</li>
+      <li>Google Spread Sheet</li>
+      <li>Gmail API・PDF生成機能</li>
+    </ul>
+
+    <h2>導入効果</h2>
+    <p>
+      毎月数時間かかっていた請求作業が、システム導入後は数分で完了するようになりました。<br>
+      また、金額の計算ミスや請求漏れがゼロになり、運営側の負担を大幅に削減。
+      受講者からの信頼度向上にもつながりました。
+    </p>
+
+    <div class="price">開発費：30〜60万円</div>
+  </div>
+
+  <div class="back-btn">
+    <a href="immanence_hp.html#case-section" class="btn-primary">メインページに戻る</a>
+  </div>
+</section>
+
+  <footer class="footer">
+    <p>© 2025 Team Immanence</p>
+  </footer>
+</body>
+
+</html>

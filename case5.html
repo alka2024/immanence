@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>開発事例｜マーケティング自動化システム | Team Immanence</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <img src="スクリーンショット 2025-11-16 23.43.48.png" alt="Team Immanence ロゴ" class="logo">
+    </div>
+  </header>
+
+<section class="case-detail container">
+  <h1>入居者管理・家賃入金照合システム</h1>
+  <p class="lead">
+    銀行APIとBubbleを活用し、入居者の入金状況を自動照合。
+    毎月の家賃管理に発生していた手作業を大幅削減した事例です。
+  </p>
+
+  <div class="case-body">
+    <h2>開発の背景</h2>
+    <p>
+      不動産管理会社では、毎月の家賃入金を入居者リストと手作業で突き合わせており、
+      照合作業に多くの時間がかかっているほか、未入金の見落としや督促漏れが頻発していました。
+      そこで、銀行APIを用いた入金データの自動取得と、Bubbleによる入居者管理の一元化を実施。
+      入金照合〜督促連絡までの流れを大幅に効率化する仕組みを構築しました。
+    </p>
+
+    <h2>主な機能</h2>
+    <ul>
+      <li>
+        <strong>銀行APIによる入金データの自動取得</strong>
+        <ul>
+          <li>毎日決まった時間に口座の入金情報を自動取得</li>
+          <li>入金金額・入金名義・日付を自動でデータベースへ登録</li>
+          <li>複数口座の情報もまとめて取り込み可能</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>入居者情報との自動照合</strong>
+        <ul>
+          <li>入金データを入居者ごとの家賃とマッチング</li>
+          <li>一致・未一致・金額相違を自動判定</li>
+          <li>未入金者リストをワンクリックで生成</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>督促・連絡の一括送信</strong>
+        <ul>
+          <li>未入金者へメール／SMSの自動送信</li>
+          <li>文章テンプレートは管理画面から編集可能</li>
+          <li>督促履歴を自動保存し、再督促の漏れを防止</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>管理者向けダッシュボード</strong>
+        <ul>
+          <li>入金状況（入金済／未入金／金額違い）を一覧で見える化</li>
+          <li>物件別・担当者別での集計にも対応</li>
+          <li>入居者ごとの入金履歴が時系列で確認可能</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>入居者情報の一元管理</strong>
+        <ul>
+          <li>契約情報・家賃・更新日などをデータベース化</li>
+          <li>CSVインポートで既存データをそのまま移行</li>
+          <li>スタッフ間で情報を共有しやすいUIを構築</li>
+        </ul>
+      </li>
+
+      <li>
+        <strong>運用工数の大幅削減</strong>
+        <ul>
+          <li>毎月数時間〜数十時間かかっていた照合作業を自動化</li>
+          <li>未入金の見落としがゼロに</li>
+          <li>担当者の作業負担が大幅に減少し、業務効率が向上</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>使用技術</h2>
+    <ul>
+      <li>銀行API（入金データ取得）</li>
+      <li>Bubble（入居者管理・管理画面・ダッシュボード）</li>
+      <li>Webhook / メール自動送信</li>
+    </ul>
+
+    <h2>導入効果</h2>
+    <p>
+      入金照合〜督促までの作業が自動化され、月次業務の約70%を削減。
+      未入金の見落としがなくなり、入居者対応の品質が安定。
+      管理対象物件の増加にも無理なく対応できる運用体制を実現しました。
+    </p>
+
+    <div class="price">開発費：120〜180万円</div>
+  </div>
+
+  <div class="back-btn">
+    <a href="immanence_hp.html#case-section" class="btn-primary">メインページに戻る</a>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <p>© 2025 Team Immanence</p>
+  </footer>
+</body>
+
+</html>
